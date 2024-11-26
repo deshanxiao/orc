@@ -494,6 +494,12 @@ if (ORC_PACKAGE_KIND STREQUAL "conan")
   add_resolved_library (orc_protobuf ${protobuf_LIBRARIES} ${protobuf_INCLUDE_DIR})
   list (APPEND ORC_SYSTEM_DEPENDENCIES Protobuf)
   list (APPEND ORC_INSTALL_INTERFACE_TARGETS "$<INSTALL_INTERFACE:protobuf::libprotobuf>")
+elseif (ORC_PACKAGE_KIND STREQUAL "vcpkg")
+  find_package(protobuf CONFIG REQUIRED)
+  add_library (orc_protobuf INTERFACE IMPORTED)
+  target_link_libraries(orc_protobuf INTERFACE protobuf::libprotobuf)
+  list (APPEND ORC_SYSTEM_DEPENDENCIES protobuf)
+  list (APPEND ORC_INSTALL_INTERFACE_TARGETS "$<INSTALL_INTERFACE:protobuf::libprotobuf>")
 elseif (NOT "${PROTOBUF_HOME}" STREQUAL "")
   find_package (Protobuf REQUIRED)
 
@@ -557,8 +563,9 @@ else ()
 endif ()
 
 add_library (orc::protobuf ALIAS orc_protobuf)
-if (NOT ORC_PACKAGE_KIND STREQUAL "conan")
+if (NOT (ORC_PACKAGE_KIND STREQUAL "conan" OR ORC_PACKAGE_KIND STREQUAL "vcpkg"))
   add_library (orc::protoc ALIAS orc_protoc)
+  message(FATAL_ERROR "This is a fatal error, and CMake will stop.")
 endif ()
 
 # ----------------------------------------------------------------------
