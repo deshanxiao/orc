@@ -500,6 +500,7 @@ elseif (ORC_PACKAGE_KIND STREQUAL "vcpkg")
   target_link_libraries(orc_protobuf INTERFACE protobuf::libprotobuf)
   list (APPEND ORC_SYSTEM_DEPENDENCIES protobuf)
   list (APPEND ORC_INSTALL_INTERFACE_TARGETS "$<INSTALL_INTERFACE:protobuf::libprotobuf>")
+  set (PROTOBUF_EXECUTABLE protobuf::protoc)
 elseif (NOT "${PROTOBUF_HOME}" STREQUAL "")
   find_package (Protobuf REQUIRED)
 
