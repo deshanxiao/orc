@@ -240,6 +240,9 @@ endif ()
 add_dependencies(orc orc-format_ep)
 
 install(TARGETS orc EXPORT orc_targets)
+
+message(STATUS " ------------dssf----------- ${ORC_INSTALL_CMAKE_DIR}")
+
 install(EXPORT orc_targets
   DESTINATION ${ORC_INSTALL_CMAKE_DIR}
   NAMESPACE "orc::"
