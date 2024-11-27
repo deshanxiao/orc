@@ -24,7 +24,6 @@
 # PROTOC_LIBRARY: location of libprotoc
 # PROTOC_STATIC_LIB: location of protoc.a
 # PROTOBUF_EXECUTABLE: location of protoc
-message(FATAL_ERROR "ERROR IN FindProtobuf.")
 if (NOT PROTOBUF_HOME)
   if (DEFINED ENV{PROTOBUF_HOME})
     set (PROTOBUF_HOME "$ENV{PROTOBUF_HOME}")
