@@ -241,11 +241,9 @@ add_dependencies(orc orc-format_ep)
 
 install(TARGETS orc EXPORT orc_targets)
 
-message(STATUS " ------------dssf----------- ${ORC_INSTALL_CMAKE_DIR} ${CMAKE_INSTALL_DATAROOTDIR}")
-
 install(EXPORT orc_targets
-        DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/orc"
-        NAMESPACE "orc::"
-        FILE "orcTargets.cmake")
+  DESTINATION ${ORC_INSTALL_CMAKE_DIR}
+  NAMESPACE "orc::"
+  FILE "orcTargets.cmake")
 
 
