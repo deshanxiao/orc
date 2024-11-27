@@ -192,6 +192,9 @@ CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=~/vcpkg/scripts/buildsystems/vcpkg.cmake
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Path to a program.
+Protobuf_PROTOC_EXECUTABLE:FILEPATH=/home/deshanxiao/vcpkg/installed/x64-linux/tools/protobuf/protoc
+
 //The directory containing a CMake configuration file for Snappy.
 Snappy_DIR:PATH=/home/deshanxiao/vcpkg/installed/x64-linux/share/snappy
 
@@ -256,8 +259,23 @@ Z_VCPKG_CL:FILEPATH=Z_VCPKG_CL-NOTFOUND
 // triplet
 _VCPKG_INSTALLED_DIR:PATH=/home/deshanxiao/vcpkg/installed
 
+//The directory containing a CMake configuration file for absl.
+absl_DIR:PATH=/home/deshanxiao/vcpkg/installed/x64-linux/share/absl
+
+//The directory containing a CMake configuration file for lz4.
+lz4_DIR:PATH=/home/deshanxiao/vcpkg/installed/x64-linux/share/lz4
+
 //The directory containing a CMake configuration file for orc.
 orc_DIR:PATH=/home/deshanxiao/vcpkg/installed/x64-linux/share/orc
+
+//The directory containing a CMake configuration file for protobuf.
+protobuf_DIR:PATH=/home/deshanxiao/vcpkg/installed/x64-linux/share/protobuf
+
+//CMake built-in FindProtobuf.cmake module compatible
+protobuf_MODULE_COMPATIBLE:BOOL=OFF
+
+//Enable for verbose output
+protobuf_VERBOSE:BOOL=OFF
 
 //Value Computed by CMake
 test_package_BINARY_DIR:STATIC=/home/deshanxiao/orc/vcpkg/test_package
@@ -267,6 +285,12 @@ test_package_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 test_package_SOURCE_DIR:STATIC=/home/deshanxiao/orc/vcpkg/test_package
+
+//The directory containing a CMake configuration file for utf8_range.
+utf8_range_DIR:PATH=/home/deshanxiao/vcpkg/installed/x64-linux/share/utf8_range
+
+//The directory containing a CMake configuration file for zstd.
+zstd_DIR:PATH=/home/deshanxiao/vcpkg/installed/x64-linux/share/zstd
 
 
 ########################
@@ -337,6 +361,8 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/deshanxiao/orc/vcpkg/test_package
@@ -406,6 +432,10 @@ CMAKE_TOOLCHAIN_FILE-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Protobuf
+FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/home/deshanxiao/vcpkg/installed/x64-linux/tools/protobuf/protoc][/home/deshanxiao/vcpkg/installed/x64-linux/lib/libprotobuf.a][/home/deshanxiao/vcpkg/installed/x64-linux/include][v28.3.0()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding ZLIB
 FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/home/deshanxiao/vcpkg/installed/x64-linux/lib/libz.a][/home/deshanxiao/vcpkg/installed/x64-linux/include][c ][v1.3.1()]
 //Install the dependencies listed in your manifest:
@@ -430,4 +460,8 @@ Z_VCPKG_ROOT_DIR:INTERNAL=/home/deshanxiao/vcpkg
 _CMAKE_CXX_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
+//ADVANCED property for variable: protobuf_MODULE_COMPATIBLE
+protobuf_MODULE_COMPATIBLE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: protobuf_VERBOSE
+protobuf_VERBOSE-ADVANCED:INTERNAL=1
 
