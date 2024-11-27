@@ -240,10 +240,7 @@ endif ()
 add_dependencies(orc orc-format_ep)
 
 install(TARGETS orc EXPORT orc_targets)
-
 install(EXPORT orc_targets
   DESTINATION ${ORC_INSTALL_CMAKE_DIR}
   NAMESPACE "orc::"
   FILE "orcTargets.cmake")
-
-
