@@ -566,7 +566,6 @@ endif ()
 add_library (orc::protobuf ALIAS orc_protobuf)
 if (NOT (ORC_PACKAGE_KIND STREQUAL "conan" OR ORC_PACKAGE_KIND STREQUAL "vcpkg"))
   add_library (orc::protoc ALIAS orc_protoc)
-  message(FATAL_ERROR "This is a fatal error, and CMake will stop.")
 endif ()
 
 # ----------------------------------------------------------------------
