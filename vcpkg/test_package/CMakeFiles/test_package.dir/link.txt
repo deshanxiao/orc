@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_package.dir/test_package.cpp.o -o test_package  /home/deshanxiao/vcpkg/installed/x64-linux/debug/lib/liborc.a -lSnappy::snappy -lZLIB::ZLIB -lzstd::libzstd_static -lLZ4::lz4 -lprotobuf::libprotobuf
