@@ -21,7 +21,7 @@
 # SNAPPY_LIBRARY: path to libsnappy
 # SNAPPY_STATIC_LIB: path to libsnappy.a
 # Snappy_FOUND: whether snappy has been found
-
+message(FATAL_ERROR "ERROR IN FindSnappy.cmake.")
 if (NOT SNAPPY_HOME)
     if (DEFINED ENV{SNAPPY_HOME})
         set (SNAPPY_HOME "$ENV{SNAPPY_HOME}")

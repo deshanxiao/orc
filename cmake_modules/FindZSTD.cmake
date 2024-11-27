@@ -21,6 +21,7 @@
 # ZSTD_LIBRARY: path to libzstd
 # ZSTD_STATIC_LIB: path to libzstd.a
 # ZSTD_FOUND: whether zstd has been found
+message(FATAL_ERROR "ERROR FindZSTD.cmake.")
 
 if (NOT ZSTD_HOME)
   if (DEFINED ENV{ZSTD_HOME})

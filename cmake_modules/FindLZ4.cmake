@@ -21,6 +21,7 @@
 # LZ4_LIBRARY: path to liblz4
 # LZ4_STATIC_LIB: path to lz4.a
 # LZ4_FOUND: whether LZ4 has been found
+message(FATAL_ERROR "ERROR IN LZ4.")
 
 if (NOT LZ4_HOME)
   if (DEFINED ENV{LZ4_HOME})

@@ -21,6 +21,7 @@
 # ZLIB_LIBRARY: path to libz/libzlib
 # ZLIB_STATIC_LIB: path to zlib.a
 # ZLIB_FOUND: whether ZLIB has been found
+message(FATAL_ERROR "ERROR FindZLIB.cmake.")
 
 if (NOT ZLIB_HOME)
   if (DEFINED ENV{ZLIB_HOME})
