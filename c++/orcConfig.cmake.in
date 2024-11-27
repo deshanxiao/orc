@@ -44,13 +44,7 @@ endif()
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}")
 
 include(CMakeFindDependencyMacro)
-foreach(dependency ${ORC_SYSTEM_DEPENDENCIES})
-  if (dependency IN_LIST VCPKG_DEPENDENCIES)
-    find_package(${dependency} REQUIRED)
-  else()
-    find_dependency(${dependency})
-  endif()
-endforeach()
+
 
 if(DEFINED ORC_CMAKE_MODULE_PATH_OLD)
   set(CMAKE_MODULE_PATH ${ORC_CMAKE_MODULE_PATH_OLD})
